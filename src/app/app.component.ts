@@ -1,10 +1,34 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styles: [
+    `
+      .list-group-item:first-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top: 0;
+      }
+    `
+  ]
 })
-export class AppComponent {
-  title = 'learn2';
+export class AppComponent implements OnInit{
+  query: string;
+  artists: any;
+
+  showArtist(item:any) {
+    this.query = item.name;
+    item.highlight = !item.highlight;
+  }
+
+  constructor(private http: HttpClient) {
+    this.query = '';
+  }
+  ngOnInit(): void {
+    this.http.get<object>('../assets/data.json').subscribe((data:any) => {
+      this.artists = data
+    })
+  }
 }

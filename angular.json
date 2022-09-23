@@ -90,12 +90,19 @@
               "src/assets"
             ],
             "styles": [
+              "../node_module/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../node_modules/jquery/dist/jquery.js",
+              "../node_module/bootstrap/dist/js/bootstrap.bundle.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
