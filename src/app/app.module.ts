@@ -7,12 +7,14 @@ import { HttpClientModule} from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { SearchArtistPipe } from './search-artist.pipe';
 import { ArtistDetailsComponent } from './artist-details/artist-details.component';
+import { ArtistItemsComponent } from './artist-items/artist-items.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchArtistPipe,
-    ArtistDetailsComponent
+    ArtistDetailsComponent,
+    ArtistItemsComponent
   ],
   imports: [
     BrowserModule,

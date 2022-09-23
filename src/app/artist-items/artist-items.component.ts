@@ -1,10 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-artist-details',
-  templateUrl: './artist-details.component.html'
+  selector: 'app-artist-items',
+  templateUrl: './artist-items.component.html',
+  
 })
-export class ArtistDetailsComponent implements OnInit {
+export class ArtistItemsComponent implements OnInit {
   @Input() artist:any;
   constructor() { }
 
